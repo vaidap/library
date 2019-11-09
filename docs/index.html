@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles/odometer-theme-minimal.css" />
+	<script src="styles/odometer.min.js"></script>
+	<style>
+		body {
+			font-family: 'Cormorant Garamond', serif;
+			text-align: center;
+		}
+
+		h1 {
+			font-size: 72px;
+		}
+
+		h2 {
+			font-size: 42px;
+		}
+
+		.underlined {
+			text-decoration: underline;
+		}
+	</style>
 </head>
 <body>
-	<h1>Encyclopaedia</h1>
+	<h1>What's in the Encyclopaedia?</h1>
 	<input id="edition_slider" type="range" min="1" max="8" value="1">
-	<input type="text" id="textInput" value="">
-	<h2> The number of words: <span id="words">0</span></h2>
+	<h2>Edition: <span id="edition" class="odometer">1</span></h2>
+	<h2> The number of words: <span id="words" class="odometer">123421</span></h2>
+	<h2> Longest word: <span id="longest_word" class="underlined">LOREM IPSUM</span></h2>
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script>
+	
+		var words = [123421,2656242,31531,41331,53151,631531,352367,8531315]
+		var longest_word = ["LOREM IPSUM", "DOLOR AMET", "VESTIBULI REGINA", "CARPE DIEM", "IGNITI VERBI", "PROMETHEUS", "MITOCHONDRIA", "ARCHITECTURAL DESIGN"]
+
 		$(document).ready(function () {
 
 
 			function updateTextInput(val) {
-	          document.getElementById('textInput').value=val; 
 
-	          if (val < 5) {
-	          	$("#words").html("1000000");
-	          }
-	          else {
-	          	$("#words").html("5");
-	          }
-	        }
-	        updateTextInput(1);
+	        	$("#edition").html(val);
+	          	$("#words").html(words[val - 1]);
+	          	$("#longest_word").html(longest_word[val - 1]);
+	      	}
+
+	        	// updateTextInput(1);
 	
 
 			$("input#edition_slider").on( 'input', function(){
