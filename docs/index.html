@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h1>Encyclopaedia</h1>
+	<input id="edition_slider" type="range" min="1" max="8" value="1">
+	<input type="text" id="textInput" value="">
+	<h2> The number of words: <span id="words">0</span></h2>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+
+			function updateTextInput(val) {
+	          document.getElementById('textInput').value=val; 
+
+	          if (val < 5) {
+	          	$("#words").html("1000000");
+	          }
+	          else {
+	          	$("#words").html("5");
+	          }
+	        }
+	        updateTextInput(1);
+	
+
+			$("input#edition_slider").on( 'input', function(){
+				console.log("changed!")
+		        updateTextInput($(this).val());    
+		    });
+
+
+	    });
+
+	</script>	
+
+</body>
+</html>
