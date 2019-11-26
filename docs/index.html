@@ -18,24 +18,33 @@
 			font-size: 42px;
 		}
 
+		h3 {
+			font-size: 32px;
+		}
+
 		.underlined {
 			text-decoration: underline;
+		}
+
+		.italics {
+			font-style: italic;
 		}
 	</style>
 </head>
 <body>
 	<h1>What's in the Encyclopaedia?</h1>
 	<input id="edition_slider" type="range" min="1" max="8" value="1">
-	<h2>Edition: <span id="edition" class="odometer">1</span></h2>
-	<h2> The number of words: <span id="words" class="odometer">123421</span></h2>
-	<h2> Longest word: <span id="longest_word" class="underlined">LOREM IPSUM</span></h2>
+	<h2>Edition <span id="edition" class="odometer">1</span> is approximately <span id="words" class="odometer">123421</span> words long.</h2>
+	<h2> One of the longest terms is <span id="longest_word" class="underlined">EXTENSOR MINIMI DIGITI PROPRIUS</span>, and it means:</h2>
+	<h3 class="italics"><span id="longest_word_def">This is a kind of collateral or auxiliary mufcle of the extenfor communis, of which it appears almoit al ways to be more or lefs a portion. It is fixed along the fuperior external half of the ul na, from whence its long fmall tendon runs down in company with the fourth tendon of the extenfor commu nis, all the way to the little finger, where it joins it, and is infer ted with it.</span></h3>
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script>
 	
-		var words = [123421,2656242,31531,41331,53151,631531,352367,8531315]
-		var longest_word = ["LOREM IPSUM", "DOLOR AMET", "VESTIBULI REGINA", "CARPE DIEM", "IGNITI VERBI", "PROMETHEUS", "MITOCHONDRIA", "ARCHITECTURAL DESIGN"]
+		var words = [2567260, 10172846, 17414509, 18672098, 18617826, 18597305, 21056156, 22878318]
+		var longest_word = ["EXTENSOR MINIMI DIGITI PROPRIUS", "DOLOR AMET", "VESTIBULI REGINA", "CARPE DIEM", "IGNITI VERBI", "PROMETHEUS", "MITOCHONDRIA", "ARCHITECTURAL DESIGN"]
+		var longest_word_def = ["This is a kind of collateral or auxiliary mufcle of the extenfor communis, of which it appears almoit al ways to be more or lefs a portion. It is fixed along the fuperior external half of the ul na, from whence its long fmall tendon runs down in company with the fourth tendon of the extenfor commu nis, all the way to the little finger, where it joins it, and is infer ted with it."]
 
 		$(document).ready(function () {
 
@@ -45,7 +54,9 @@
 	        	$("#edition").html(val);
 	          	$("#words").html(words[val - 1]);
 	          	$("#longest_word").html(longest_word[val - 1]);
+	          	$("#longest_word_def").html(longest_word_def[val - 1]);
 	      	}
+	      		// uncomment this?
 
 	        	// updateTextInput(1);
 	
