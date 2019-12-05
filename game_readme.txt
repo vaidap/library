@@ -15,3 +15,7 @@ reposition the pictures so that they can make more sense in historical perspecti
 1.2
 news
 change it easier for players because we found it's hard for some people to experience all the game
+
+2.0
+new features
+add a bar chart level that is really interesting. you can draw the bar chart with your charactor trail.
