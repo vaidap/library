@@ -11,3 +11,7 @@ Enjoy!
 1.1
 New features:
 reposition the pictures so that they can make more sense in historical perspective.
+
+1.2
+news
+change it easier for players because we found it's hard for some people to experience all the game
