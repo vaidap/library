@@ -1,0 +1,58 @@
+<style>
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+		body {
+			font-family: 'Courier', serif;
+			text-align: center;
+             
+		}
+		h1 {
+			font-size: 30px;
+	}
+		h2 {
+			font-size: 20px;
+		}
+		.underlined {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	
+	<input id="edition_slider" type="range" min="1" max="8" value="1">
+	<h2>Edition: <span id="edition" class="odometer">1</span></h2>
+	<h2> Occurrence: <span id="words" class="odometer">123421</span></h2>
+	
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+	
+		var words = [59,133,86,71,59,66,17,57
+]
+		$(document).ready(function () {
+			function updateTextInput(val) {
+	        	$("#edition").html(val);
+	          	$("#words").html(words[val - 1]);
+	          	
+	      	}
+	        	updateTextInput(1);
+	
+			$("input#edition_slider").on( 'input', function(){
+				console.log("changed!")
+		        updateTextInput($(this).val());    
+		    });
+	    });
+	</script>	
+
+</body>
+</html>
